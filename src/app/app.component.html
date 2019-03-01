@@ -1,2 +1,14 @@
-<h1>Aula 1</h1>
-<h4>Brasil</h4>
+<h1 class="centralizado">Aula 2</h1>
+<h4 class="centralizado">Brasil</h4>
+<p> Boa noite {{nome}} </p>
+
+<form>
+  <input type="number" name="valor1" value="" [(ngModel)]="valor1">
+  <input type="number" name="valor2" value="" [(ngModel)]="valor2">
+  <button type="button" name="button" (click)="clique()">
+    Enviar</button>
+</form>
+
+<br/>
+
+<h4>Resultado: {{result}}</h4>
