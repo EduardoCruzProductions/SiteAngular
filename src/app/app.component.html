@@ -1,14 +1,13 @@
-<h1 class="centralizado">Aula 2</h1>
-<h4 class="centralizado">Brasil</h4>
-<p> Boa noite {{nome}} </p>
-
-<form>
-  <input type="number" name="valor1" value="" [(ngModel)]="valor1">
-  <input type="number" name="valor2" value="" [(ngModel)]="valor2">
-  <button type="button" name="button" (click)="clique()">
-    Enviar</button>
-</form>
-
+<div class="container-fluid">
+  <header>
+    <nav class="navbar navbar-expand-md bg-info">
+      <a routerLink = "/" class="nav-link text-white"> Home </a>
+      <a routerLink = "calculadora" class="nav-link text-white"> Calculadora </a>
+      <a routerLink = "#"class="nav-link text-white"> Positivo/Negativo </a>
+      <a routerLink = "#" class="nav-link text-white"> IMC </a>
+      <a routerLink = "#" class="nav-link text-white"> Cadastro Pessoa </a>
+    </nav>
+  </header>
+</div>
 <br/>
-
-<h4>Resultado: {{result}}</h4>
+<router-outlet></router-outlet>
