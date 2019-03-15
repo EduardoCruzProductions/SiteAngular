@@ -1,0 +1,46 @@
+<div class="container">
+  <h3 class="center">Lista</h3>
+
+  <form>
+
+    <div class="input-group mb-3">
+      <input name="nome" [(ngModel)]="estado.nome" placeholder="Nome do Estado" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3">
+      <input name="sigla" [(ngModel)]="estado.sigla" placeholder="Sigla" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <button (click) = "adicionar()" type="button" class="btn btn-dark">Adicionar</button>
+
+  </form>
+
+  <br>
+
+  <table class="table table-striped">
+
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Sigla</th>
+        <th scope="col">Alterar</th>
+        <th scope="col">Excluir</th>
+      </tr>
+    </thead>
+
+    <tr *ngFor="let estado of estados; let i = index">
+      <td>{{i}}</td>
+      <td>{{estado.nome}}</td>
+      <td>{{estado.sigla}}</td>
+      <td>
+        <button (click) = "alterar(i)" type="button" class="btn btn-info"><i class="fas fa-marker"></i></button>
+      </td>
+      <td>
+        <button (click) = "excluir(i)" type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+      </td>
+    </tr>
+
+  </table>
+
+</div>
