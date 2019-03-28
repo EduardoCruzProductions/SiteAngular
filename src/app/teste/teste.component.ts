@@ -41,7 +41,10 @@ export class TesteComponent{
     let estado: Estado = this.estados[i];
     this.estados.splice(i, 1);
     this.estado = estado;
-    console.log(this.estado.getNome())
+  }
+
+  mostrarDetalhes(i: number) : void{
+    this.estado = this.estados[i];
   }
 
 }

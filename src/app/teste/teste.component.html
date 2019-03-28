@@ -11,6 +11,10 @@
       <input name="sigla" [(ngModel)]="estado.sigla" placeholder="Sigla" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
 
+    <div class="input-group mb-3">
+      <input name="detalhes" [(ngModel)]="estado.detalhes" placeholder="Detalhes" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+
     <button (click) = "adicionar()" type="button" class="btn btn-dark">Adicionar</button>
 
   </form>
@@ -26,6 +30,7 @@
         <th scope="col">Sigla</th>
         <th scope="col">Alterar</th>
         <th scope="col">Excluir</th>
+        <th scope="col">Detalhes</th>
       </tr>
     </thead>
 
@@ -39,7 +44,27 @@
       <td>
         <button (click) = "excluir(i)" type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
       </td>
+      <td>
+        <button (click) = "mostrarDetalhes(i)" type="button" class="btn btn-info" data-toggle="modal" data-target=".modal"><i class="fas fa-book"></i></button>
+      </td>
     </tr>
+
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">{{estado.nome}}</h5>
+          </div>
+          <div class="modal-body">
+            <p><b>Sigla:</b> {{estado.sigla}}</p>
+            <p><b>Detalhes:</b> {{estado.detalhes}}</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" name="button" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </table>
 
