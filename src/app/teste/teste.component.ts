@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Estado } from '../classes/Estado';
+import { ServiceEstado } from '../service/service.estado';
 
 @Component({
   selector: 'teste-component',
@@ -7,11 +8,12 @@ import { Estado } from '../classes/Estado';
   styleUrls: ['./teste.component.css']
 })
 export class TesteComponent{
-  estados = new Array<Estado>();
+
+  estados = this.service.buscar();
   estado: Estado = new Estado();
 
-  constructor(){
-
+  constructor(private service: ServiceEstado){
+    
   }
 
   adicionar() : void{
@@ -28,19 +30,18 @@ export class TesteComponent{
         alert("Preecha o campo Sigla!");
     }
 
-    this.estados.push(this.estado);
+    this.service.adicionar(this.estado);
     this.estado = new Estado();
 
   }
 
   excluir(i: number) : void{
-    this.estados.splice(i, 1);
+    this.service.excluir(i);
   }
 
   alterar(i: number) : void{
     let estado: Estado = this.estados[i];
-    this.estados.splice(i, 1);
-    this.estado = estado;
+    this.service.alterar(estado);
   }
 
   mostrarDetalhes(i: number) : void{

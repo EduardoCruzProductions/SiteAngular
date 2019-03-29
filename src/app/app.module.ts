@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { TesteComponent } from './teste/teste.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ServiceEstado } from './service/service.estado';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ServiceEstado],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
